@@ -1,0 +1,240 @@
+.vjs-text-track-display,
+.vjs-loading-spinner,
+.vjs-big-play-button,
+.vjs-control-bar,
+.vjs-error-display,
+.vjs-modal-dialog {
+  display: none;
+}
+
+.GreetingVideoComponent-fullStoryLink {
+  text-decoration: none;
+  color: white;
+  margin: 0 auto;
+  width: max-content;
+  padding: 0.25em 0.5em;
+  border-radius: 30px;
+  background: url(https://cdn.workmob.com/stories_workmob/images/promotional/button-bg.png);
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.greeting-heading-header{
+  color: white;
+  font-weight: 100;
+}
+
+.greetingLogo {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 6px;
+  align-items: center;
+}
+
+.greetingLogo img {
+  width: 150px;
+}
+
+.verticalScrolling {
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  text-align: center;
+  padding: 10px 15px;
+  background-color: var(--black-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-image: url("./home_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.fHeading {
+  padding: 0 0 5px 0;
+  margin: 0 0 0 0;
+}
+
+.fHeading h1 {
+  font-weight: bold;
+  font-size: 40px;
+  color: #f96332;
+  margin: 0 8px;
+}
+
+.fHeading h2 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 40px;
+  margin: 0;
+  font-family: "hp-simplified", sans-serif;
+}
+
+.fContent {
+  margin: 10px auto;
+}
+
+.fContent img {
+  width: 300px;
+}
+
+.videoContainer {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.videoContainer > div {
+  padding: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.videoContainer video {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 1px 1px 12px 12px rgba(0, 0, 0, 0.25);
+  background-size: 1px 1px, calc(100% - 2px) 3px, 1px 1px, 3px calc(100% - 2px);
+  background-position: top left, top center, top right, center right,
+    bottom right, bottom center, bottom left, center left;
+  background-repeat: no-repeat;
+  padding: 4px;
+}
+
+.videoContainer .buttonContainer {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 8px;
+  left: 6px;
+  width: 100% !important;
+  padding: 0 5px 0 10px;
+  box-sizing: border-box;
+}
+
+.buttonContainer .btn {
+  border-radius: 5px;
+  border: 0px solid rgba(255, 255, 255, 0.5);
+  font-family: "Alata", sans-serif;
+  font-size: 14px;
+  color: #fff;
+  margin-top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.3rem 1rem;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.btnIcon {
+  border: 0;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.btnIcon > i {
+  font-size: 20px;
+  color: #fff;
+}
+
+.iconContainer {
+  flex: 1;
+  text-align: right;
+}
+.heading {
+  color: white;
+  font-weight: 100;
+  font-family: "Montserrat", sans-serif;
+}
+
+span.vjs-control-text {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .fHeading {
+    padding: 40px 0 10px 0;
+    margin: 0 0 0 0;
+  }
+
+  .fHeading h1 {
+    font-size: 20px;
+  }
+
+  .fHeading h2 {
+    font-size: 20px;
+  }
+
+  .fContent img {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .fContent {
+    margin: 0 auto 20px auto;
+  }
+
+  .videoContainer {
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  .greetingLogo {
+    padding: 12px;
+    margin-bottom: 0;
+  }
+
+  .videoContainer .unmuteBtn {
+    top: 0;
+    right: 0;
+  }
+
+  .videoContainer video {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+
+    box-shadow: 1px 1px 12px 12px rgba(0, 0, 0, 0.25);
+    background-size: 1px 1px, calc(100% - 2px) 3px, 1px 1px,
+      3px calc(100% - 2px);
+    background-position: top left, top center, top right, center right,
+      bottom right, bottom center, bottom left, center left;
+    background-repeat: no-repeat;
+    padding: 4px;
+  }
+
+  .videoContainer .buttonContainer {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 8px;
+    left: 6px;
+    width: 100% !important;
+    padding: 0 5px 0 10px;
+    box-sizing: border-box;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(180, 2%, 11%);
+  }
+  100% {
+    background-color: rgb(31, 32, 32);
+  }
+}

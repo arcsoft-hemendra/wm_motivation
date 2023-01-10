@@ -1,0 +1,13 @@
+.NotFound-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.NotFound-content {
+  margin: auto 0;
+}
+
+.not-found-title{
+  color: #dfdfdf
+}

@@ -1,0 +1,124 @@
+.categories-main-search {
+  margin: auto 1rem;
+}
+.categories-search {
+  font-size: 1.6em;
+  width: 100%;
+  max-width: 700px;
+  padding: 0.25em 1em 0.25em 2em;
+  text-align: initial;
+  margin: 1rem auto;
+  background: #373436;
+  border-radius: 30px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.categories-searchIcon {
+  font-size: 0.9em;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #6d6d6d;
+}
+
+.categories-searchIcon::before {
+  font-weight: bold;
+}
+
+.categories-optionsInput {
+  font-family: "Alata" san-serif;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+}
+
+.icon-icon-search-new:before {
+  content: "\e814";
+}
+
+.greetingVideoContainer {
+  margin: 2.8em 2em 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2em;
+}
+
+.greetVidSection {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.greetVidSection::before {
+  content: "";
+  padding-top: 56.25%;
+  display: block;
+}
+
+.videoLandscapeThumb {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.playIconContainer {
+  position: absolute;
+  cursor: pointer;
+  left: 1em;
+  bottom: 1em;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.playIcon {
+  font-size: 1.3em;
+  border: 0;
+  color: white;
+}
+
+.no-category {
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 10px);
+}
+
+@media (max-width: 950px) {
+  .categories-search {
+    font-size: 1.25em;
+  }
+}
+
+@media (max-width: 767px) {
+  .VideoList-title {
+    font-size: 2.2rem;
+  }
+
+  .VideoList-tagline {
+    font-size: 1.3rem;
+    margin-bottom: 0.7em;
+  }
+
+  .greetingVideoContainer {
+    margin: 1.5em 1em 1em;
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  .VideoList-paragraph {
+    font-size: 0.75rem;
+    line-height: 1.65;
+  }
+}

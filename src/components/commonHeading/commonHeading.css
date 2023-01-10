@@ -1,0 +1,51 @@
+.VideoList-title {
+  font: bold 3.5rem / normal "hp-simplified", sans-serif;
+  color: transparent;
+  background-image: linear-gradient(#ff8800 44%, #ffc300, #ff8800 77%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin: 0.25em auto 0;
+}
+
+.VideoList-tagline {
+  color: #ffcd36;
+  font: bold 1.6rem "Alata", sans-serif;
+  margin: 0 auto 0.85em;
+}
+
+.VideoList-paragraph {
+  font: bold 1.2rem "Alata", sans-serif;
+  color: white;
+  width: 1000px;
+  max-width: calc(100% - 2em);
+  margin: 0 auto;
+  position: relative;
+}
+
+.VideoList-paragraph::before {
+  content: "";
+  width: 29px;
+  height: 4px;
+  background: #f96332;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  margin: 0 auto 0.48em;
+}
+
+@media (max-width: 767px) {
+  .VideoList-title {
+    font-size: 2.2rem;
+  }
+
+  .VideoList-tagline {
+    font-size: 1.3rem;
+    margin-bottom: 0.7em;
+  }
+
+  .VideoList-paragraph {
+    font-size: 0.75rem;
+    line-height: 1.65;
+  }
+}

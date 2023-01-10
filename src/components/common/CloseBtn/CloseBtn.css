@@ -1,0 +1,104 @@
+.waveBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.waveBtn .closeBtnWave {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -45px;
+  right: -45px;
+  background-color: #bf40e4;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.45);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.waveBtn .btnClose {
+  height: 28px;
+  width: 28px;
+  top: 8px;
+  right: 8px;
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+  background: #fff;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* below css is added as according to refresh issue, on refresh 'x' icon was missing */
+.icon-cancel::before { content: '\e800'; }
+
+@font-face {
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: local('fontello'), url('../../Layout/fonts/fontello.woff') format('woff');
+}
+
+[class^='icon-']::before,
+[class*=' icon-']::before {
+  font-family: 'fontello', sans-serif !important;
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+
+  /* For safety - reset parent styles, that can break glyph codes */
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+
+  /* remove if not needed */
+  margin-left: 0.2em;
+
+  /* you can be more comfortable with increased icons size */
+
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Uncomment for 3D effect */
+
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+@media (max-width: 768px) {
+  .waveBtn {
+    width: 51px;
+    height: 54px;
+  }
+
+  .waveBtn .btnClose {
+    top: 5px;
+    right: 2px;
+  }
+
+  .waveBtn .closeBtnWave {
+    top: -13px;
+    right: -13px;
+  }
+
+}

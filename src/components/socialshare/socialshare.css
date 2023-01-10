@@ -1,0 +1,129 @@
+.social-share {
+  position: absolute;
+  right: 10px;
+  bottom: 30px;
+}
+/* Tooltip Styles */
+
+.cstm-tooltip {
+  color: #fff;
+  position: relative;
+  transition: all 0.2s ease-out;
+  padding: 0.2rem;
+}
+
+.cstm-tooltip::before,
+.cstm-tooltip::after {
+  position: absolute;
+  left: 50%;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+
+.cstm-tooltip::before {
+  content: "";
+  border-width: 5px 4px 0 5px;
+  border-style: solid;
+  margin-left: -32px;
+  top: -8px;
+}
+
+.cstm-tooltip::after {
+  content: attr(data-tooltip);
+  top: -8px;
+  min-width: 120px;
+  margin-left: -68px;
+  padding: 2px 5px 3px 5px;
+  font-size: 12px;
+  border-radius: 4px;
+  transform: translate3d(0, -100%, 0);
+  pointer-events: none;
+}
+
+/* 4 tooltip positions */
+
+.cstm-tooltip[data-tooltip-position="left"]::before {
+  margin-left: -32px;
+  top: 12px;
+  transform: rotate(-90deg);
+}
+
+.cstm-tooltip[data-tooltip-position="left"]::after {
+  transform: translate3d(-65%, 40%, 0);
+}
+
+.cstm-tooltip[data-tooltip-position="right"]::before {
+  margin-left: 14px;
+  top: 12px;
+  transform: rotate(90deg);
+}
+
+.cstm-tooltip[data-tooltip-position="right"]::after {
+  transform: translate3d(60%, 40%, 0);
+}
+
+.cstm-tooltip[data-tooltip-position="bottom"]::before {
+  margin-left: -4px;
+  top: 32px;
+  transform: rotate(-180deg);
+}
+
+.cstm-tooltip[data-tooltip-position="bottom"]::after {
+  transform: translate3d(0, 186%, 0);
+}
+
+/* end of 4 tooltip positions */
+
+.cstm-tooltip:hover::before,
+.cstm-tooltip:hover::after {
+  opacity: 1;
+}
+
+.fb:after {
+  background-color: #3b5998;
+}
+.fb:before {
+  border-color: #3b5998 transparent;
+}
+.whatsapp:after {
+  background-color: #1c9e48;
+}
+.whatsapp:before {
+  border-color: #1c9e48 transparent;
+}
+.linkedin:after {
+  background-color: #006894;
+}
+.linkedin:before {
+  border-color: #006894 transparent;
+}
+.twitter:after {
+  background-color: #419ad4;
+}
+.twitter:before {
+  border-color: #419ad4 transparent;
+}
+.email:after {
+  background-color: #a42c2c;
+}
+.email:before {
+  border-color: #a42c2c transparent;
+}
+.copy:after {
+  background-color: #6f5bf9;
+}
+.copy:before {
+  border-color: #6f5bf9 transparent;
+}
+
+@media (max-width: 767px) {
+  .social-share {
+    position: fixed;
+    right: 0px;
+    left: 0;
+    bottom: 0px !important;
+    z-index: 7;
+    padding-top: 10px;
+    background: #000;
+  }
+}

@@ -1,0 +1,22 @@
+  #skeleton_Container {
+    animation: skeleton-loading 1s linear infinite alternate;
+    min-height: 50vh;
+    max-width: 58vw;
+    background: black;
+    opacity: 60%;
+    border-radius: 20px
+  }
+
+  #skeleton_video {
+    animation: skeleton-loading 1s linear infinite alternate;
+    position: relative;
+    height: 26px;
+    min-height: 20px;
+    width: 50%;
+    right: 25%;
+    left: 25%;
+    border-radius: 4px;
+    background: black;
+    opacity: 60%;
+    margin-top: 12px;
+  }
