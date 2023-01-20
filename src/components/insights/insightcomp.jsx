@@ -17,10 +17,27 @@ const InsightComp = () => {
     history.push(`/insights/${item.slug}`);
   };
 
+  const handleCategory = () => {
+    history.push("/insights");
+  };
+
   return (
     <>
       <div className="greeting-randomvideo-set">
-        <h1 className="greeting-header-cat">Insights</h1>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <h1 className="greeting-header-cat">INSIGHTS</h1>
+          <i
+            onClick={handleCategory}
+            style={{ fontSize: "0.8rem", cursor: "pointer" }}
+            className="icon icon-right-arrow greeting-header-cat"
+          />
+        </div>
         <div className="insightDataMain-div">
           {insightData && insightData.length > 0
             ? insightData.slice(0, 2).map((item, index) => {

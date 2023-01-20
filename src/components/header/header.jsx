@@ -36,7 +36,7 @@ const Header = ({ heading }) => {
   };
 
   const handleCategory = () => {
-    history.push("/events");
+    history.push("/categories");
   };
 
   const handleLocation = () => {

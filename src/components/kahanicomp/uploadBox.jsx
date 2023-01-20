@@ -151,7 +151,7 @@ const UploadBox = () => {
       },
       data: {
         //to: 'manish@arcgate.com', // This is the body part
-        subject: "Video Email Notification",
+        subject: "Hope Video Email Notification",
         body: `<html><body>Checkout my video: <h3 style="margin:0">Name: ${name}</h2> <h3 style="margin:0">Phone: ${phone}</h3> <h3 style="margin:0">Source: ${source}</h3> <h3 style="margin:0">Video Uploaded: ${videoUploaded}</h3><addr><br /><br /><small>Thanks <br />Team Arcgate</small></addr></body></html>`,
       },
     }).then((response) => {

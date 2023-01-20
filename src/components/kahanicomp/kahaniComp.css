@@ -2,7 +2,7 @@
   background-size: contain;
   background-repeat: repeat;
   background-attachment: scroll;
-  margin-top: 2em;
+  margin-top: 6em;
 }
 
 .upload-video-box {
@@ -64,7 +64,7 @@
   border-radius: 100px;
 }
 
-.buttonSubmitKahaniUpload{
+.buttonSubmitKahaniUpload {
   background: rgb(249, 99, 50) !important;
   height: 40px;
   width: 136px;
@@ -96,7 +96,7 @@
 }
 
 .videoGreetMain {
-  height: calc((100vw - 440px) * 5 / 9) !important;
+  height: calc((100vw - 540px) * 5 / 9) !important;
   max-height: 90vh;
   width: 100% !important;
 }
@@ -107,11 +107,11 @@
 }
 
 .profile_video_new-dimensions {
-   /* width: 100% !important;
+  /* width: 100% !important;
   height: auto !important;  */
 }
 
-.videoGreetMain  .vjs-tech {
+.videoGreetMain .vjs-tech {
   position: absolute;
   top: 0;
   left: 0;
@@ -125,4 +125,27 @@
   background-size: contain;
   background-repeat: repeat;
   background-attachment: scroll;
+}
+
+@media screen and (max-width: 767px) {
+  .upload-video-box {
+    width: 100% !important;
+    max-width: 92% !important;
+    padding: 40px 20px !important;
+    margin: 20px 15px !important;
+  }
+  .upload-video-box form .form-group.upload {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .kahaniMainDiv {
+    margin-top: 1em;
+  }
+  .kahanivideoContainer {
+    width: calc(100vw - 40px);
+    margin-bottom: 2rem;
+  }
+  .videoGreetMain {
+    height: calc((100vw - 90px) * 5 / 9) !important;
+  }
 }

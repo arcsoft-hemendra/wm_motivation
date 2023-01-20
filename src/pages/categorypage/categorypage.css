@@ -1,3 +1,51 @@
+.categories-main-search {
+  margin: auto 1rem;
+}
+
+.categories-search {
+  font-size: 1.6em;
+  width: 100%;
+  max-width: 700px;
+  padding: 0.25em 1em 0.25em 2em;
+  text-align: initial;
+  margin: 1rem auto;
+  background: #373436;
+  border-radius: 30px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.categories-searchIcon {
+  font-size: 0.9em;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #6d6d6d;
+}
+
+.bi-search::before {
+  content: "\f52a";
+}
+
+.categories-optionsInput {
+  font-family: "Alata" san-serif;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+}
+
+.no-category {
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 10px);
+}
+
 .categories-gridContainer {
   margin: 2rem 0rem 1rem 0rem;
   width: 100%;
@@ -56,6 +104,13 @@
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 14px 0px;
 }
+
+@media (max-width: 950px) {
+.categories-search {
+  font-size: 1.25em;
+}
+}
+
 
 @media (max-width: 767px) {
   .categories-topRow {

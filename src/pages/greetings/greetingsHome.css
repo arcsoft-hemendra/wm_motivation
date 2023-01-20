@@ -150,20 +150,6 @@
   border-radius: 1rem;
 }
 
-/* .small-fixed-section-container .text-red:after {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  left: 50%;
-  bottom: 0px;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid #df4357;
-} */
-
 .categories-search {
   font-size: 1.6em;
   width: 100%;
@@ -317,7 +303,7 @@
 }
 
 .greetingVideoContainer {
-  margin: 2.8em 2em 2em;
+  margin: 1em 2em;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 2em;
@@ -412,8 +398,8 @@
 }
 
 .page-footer {
-  width: 98%;
-  margin: auto;
+  width: 96%;
+  /* margin: auto; */
   padding: 1rem;
 }
 
@@ -474,9 +460,11 @@
   font-size: 2em;
   font-weight: bold;
   display: flex;
-  width: 300px;
-  margin: 0 auto 0.35em;
+  /* width: 300px; */
+  margin: 0.8rem auto;
   color: white;
+  align-items: center;
+  justify-content: center;
 }
 
 .HomePageFooter-category {
@@ -605,7 +593,7 @@
 }
 
 .mainCenterGreetText {
-  font: bold 1.6rem / normal "hp-simplified", sans-serif;
+  font: bold 2rem / normal "hp-simplified", sans-serif;
   color: transparent;
   background-image: linear-gradient(#ff8800 44%, #ffc300, #ff8800 77%);
   -webkit-background-clip: text;
@@ -689,9 +677,6 @@
     font-size: 0.8em;
   }
 
-  .page-footer {
-    padding: 0rem;
-  }
   .insightDataMain-div {
     width: 95%;
     margin: auto;
@@ -708,14 +693,9 @@
     font-size: 1rem;
   }
 
-  .greetingVideoContainer {
-    margin: 1.5em 1em 1em;
-    grid-template-columns: 1fr;
-    gap: 1em;
-  }
   .greeting-header-cat {
     font-size: 1.2rem;
-    margin: 2rem 1rem;
+    margin: 1rem;
   }
 }
 
@@ -739,9 +719,11 @@
 }
 
 @media (max-width: 950px) {
-  /* .categories-topRow {
-    display: none;
-  } */
+  .greetingVideoContainer {
+    margin: 1em;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+  }
 
   .categories-search {
     font-size: 1.25em;
@@ -755,6 +737,10 @@
     width: 95%;
     margin: auto;
     gap: 10px;
+  }
+  .playIconContainer {
+    left: 0.4em;
+    bottom: 0.5em;
   }
 
   .categories-locationLink {

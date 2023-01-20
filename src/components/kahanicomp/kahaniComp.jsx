@@ -5,14 +5,9 @@ import VideoJS from "../common/VideoJS/VideoJsNew";
 import "./kahaniComp.css";
 import UploadBox from "./uploadBox";
 
-const KahaniComp = ({value}) => {
+const KahaniComp = ({ value }) => {
   const [width, setWidth] = useState(true);
   const [play, setPlay] = useState(true);
-
-
-  // setTimeout(() => {
-  //   setPlay(true)
-  // }, 3000);
 
   useEffect(() => {
     if (window?.innerWidth < 767) {
@@ -40,7 +35,7 @@ const KahaniComp = ({value}) => {
     // }
   };
 
-  if (width) {
+  if (true) {
     return (
       <div className="kahaniMainDiv">
         <div className="position-relative d-flex  justify-content-around flex-md-row flex-column align-items-center first-page-content">
@@ -69,7 +64,7 @@ const KahaniComp = ({value}) => {
                     }}
                     videoProps={{
                       poster:
-                        "https://cdn.workmob.com/stories_workmob/images/common/merikahani.jpg",
+                        "https://cdn.workmob.com/stories_workmob/web_home/profile-pehchan.jpg",
                     }}
                   />
                 )}
@@ -77,7 +72,7 @@ const KahaniComp = ({value}) => {
             </div>
           </div>
         </div>
-        <div
+        {/* <div
           className={`section videoSection px-3 position-relative d-flex align-items-center justify-content-center`}
         >
           <img
@@ -85,7 +80,7 @@ const KahaniComp = ({value}) => {
             className="position-relative"
             src="https://cdn.workmob.com/stories_workmob/images/common/merikahani-award.png"
           />
-        </div>
+        </div> */}
       </div>
     );
   } else {
@@ -101,7 +96,32 @@ const KahaniComp = ({value}) => {
             <UploadBox />
           </div>
         </div>
-        <div
+        <div className="kahanismallscreen">
+          {play && (
+            <VideoJS
+              // onReady={(player) => handlePlayerReady(player)}
+              options={{
+                id: "kahanimainvideomobile",
+                muted: true,
+                autoplay: true,
+                loop: true,
+                preload: "auto",
+                controls: false,
+                sources: [
+                  {
+                    src: value,
+                    type: "application/x-mpegURL",
+                  },
+                ],
+              }}
+              videoProps={{
+                poster:
+                  "https://cdn.workmob.com/stories_workmob/web_home/gyanmanch.jpg",
+              }}
+            />
+          )}
+        </div>
+        {/* <div
           className={`section videoSection position-relative d-flex align-items-start justify-content-center`}
         >
           <img
@@ -122,7 +142,7 @@ const KahaniComp = ({value}) => {
             </a>
             Learn More
           </div>
-        </div>
+        </div> */}
       </>
     );
   }

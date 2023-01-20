@@ -1,7 +1,7 @@
-.categories-main-search {
+.search_categories-main-search {
   margin: auto 1rem;
 }
-.categories-search {
+.search_categories-search {
   font-size: 1.6em;
   width: 100%;
   max-width: 700px;
@@ -14,7 +14,7 @@
   flex-shrink: 0;
 }
 
-.categories-searchIcon {
+.search_categories-searchIcon {
   font-size: 0.9em;
   font-weight: 600;
   position: absolute;
@@ -24,10 +24,9 @@
   color: #6d6d6d;
 }
 
-.categories-searchIcon::before {
+.search_categories-searchIcon::before {
   font-weight: bold;
 }
-
 .categories-optionsInput {
   font-family: "Alata" san-serif;
   width: 100%;
@@ -41,27 +40,28 @@
   content: "\e814";
 }
 
-.greetingVideoContainer {
+
+.search_greetingVideoContainer {
   margin: 2.8em 2em 2em;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 2em;
 }
 
-.greetVidSection {
+.search_greetVidSection {
   border-radius: 12px;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   position: relative;
 }
 
-.greetVidSection::before {
+.search_greetVidSection::before {
   content: "";
   padding-top: 56.25%;
   display: block;
 }
 
-.videoLandscapeThumb {
+.search_videoLandscapeThumb {
   width: 100%;
   display: block;
   position: absolute;
@@ -71,7 +71,7 @@
   left: 0;
 }
 
-.playIconContainer {
+.search_playIconContainer {
   position: absolute;
   cursor: pointer;
   left: 1em;
@@ -82,13 +82,17 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.playIcon {
+.search_playIcon {
   font-size: 1.3em;
   border: 0;
   color: white;
 }
 
-.no-category {
+.icon-play::before {
+  content: "\e808";
+}
+
+.search_no-category {
   color: white;
   font-size: 1.5rem;
   position: absolute;
@@ -96,13 +100,13 @@
   transform: translate(-50%, 10px);
 }
 
-@media (max-width: 950px) {
-  .categories-search {
-    font-size: 1.25em;
-  }
-}
 
 @media (max-width: 767px) {
+  .search_playIconContainer{
+    left: 0.3em;
+    bottom: 0.3em;
+  }
+
   .VideoList-title {
     font-size: 2.2rem;
   }
@@ -112,13 +116,16 @@
     margin-bottom: 0.7em;
   }
 
-  .greetingVideoContainer {
+  .search_greetingVideoContainer {
     margin: 1.5em 1em 1em;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 1em;
   }
   .VideoList-paragraph {
     font-size: 0.75rem;
     line-height: 1.65;
   }
+  .search_categories-search {
+    font-size: 1.25em;
+}
 }

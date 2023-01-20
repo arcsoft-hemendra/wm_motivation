@@ -56,7 +56,7 @@ const VideoThumbNew = ({ styles, data, imgRef, onVideoClick, dataLimit }) => {
               <i className={`icon-play ${styles.playIcon}`} />
             </div>
           </section>
-         <p className="text-white m-0 px-5">{item.storyHeading}</p>
+         {/* <p className="text-white m-0 px-5">{item.storyHeading}</p> */}
         </div>
       ))}
     </>

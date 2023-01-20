@@ -13,7 +13,7 @@ const FooterScroller = ({
 
   return (
     <>
-      {pathname === `/events/${categoryName[0]}` ? (
+      {pathname === `/categories/${categoryName[0]}` ? (
         <div className={"small-fixed-section fixed-bottom"}>
           <div
             className={
@@ -30,7 +30,7 @@ const FooterScroller = ({
                     <Link
                       key={index}
                       className={activeClass === index ? "text-red" : ""}
-                      to={`/events/${category.category}`}
+                      to={`/categories/${category.category}`}
                       onClick={() => {
                         setActiveClass(index);
                       }}
@@ -47,7 +47,7 @@ const FooterScroller = ({
                     </Link>
                   );
                 })}
-              <Link to={"/events"} className="more-cateogories">
+              <Link to={"/categories"} className="more-cateogories">
                 <p>More</p>
               </Link>
             </ScrollContainer>

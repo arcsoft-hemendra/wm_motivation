@@ -6,7 +6,7 @@ import Header from "../../components/header/header";
 import Socialshare from "../../components/socialshare/socialshare";
 import SubFooterMain from "../../components/subfooter/subFooterMain";
 import "./insight.css";
-import './../../../node_modules/bootstrap/dist/css/bootstrap.css'
+import "./../../../node_modules/bootstrap/dist/css/bootstrap.css";
 
 const Insight = () => {
   const [insightData, setInsightData] = useState({});
@@ -81,7 +81,17 @@ const Insight = () => {
         <Header heading={"आशा"} type="insights" />
         <CloseBtn locationType={"/"} />
         <div className="greeting-randomvideo-set mt-5">
-          <h1 className="greeting-header-cat">Insights</h1>
+          <h1
+            className="greeting-header-cat"
+            style={{
+              fontSize: "2rem",
+              margin: "2rem",
+              color: "white",
+              float: "left",
+            }}
+          >
+            INSIGHTS
+          </h1>
           <div className="insightDataMain-div">
             {insightDataMain && insightDataMain.length > 0
               ? insightDataMain.slice(0, 2).map((item, index) => {
@@ -92,7 +102,7 @@ const Insight = () => {
                       className="insightItemDiv"
                     >
                       <img src={item.thumb} alt="insightIcon" />
-                      <div>{item?.insightData?.storyHeading}</div>
+                      <div>{item?.storyHeading}</div>
                     </Link>
                   );
                 })

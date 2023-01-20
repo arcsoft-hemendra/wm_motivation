@@ -69,7 +69,7 @@ const Categorypage = () => {
   // Here sending user to other page
   const handlePush = (item) => {
     const itemmain = item.category.replace(/_/g, "-");
-    history.push(`/events/${itemmain}`);
+    history.push(`/categories/${itemmain}`);
   };
 
   // Here loader

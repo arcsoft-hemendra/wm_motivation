@@ -12,6 +12,7 @@ import Footer from "../../components/footer/greetingsFooter";
 
 const GreetingsHome = () => {
   const [isScrollDown, setIsScrollDown] = useState(false);
+  const [widthCheck, setWidthCheck] = useState(null);
   const { greetingsJson } = greetingsData;
   const documentTitle = greetingsJson.documentTitle;
   const metaDescription = greetingsJson.metaDescription;
@@ -44,6 +45,25 @@ const GreetingsHome = () => {
     };
   }, []);
 
+  // Handling width
+  useEffect(() => {
+    // Here we are checking the width for main category card showing condition
+    if (window.innerWidth < 950) {
+      setWidthCheck(true);
+    }
+    const widthCheck = () => {
+      if (window.innerWidth > 950) {
+        setWidthCheck(false);
+      } else {
+        setWidthCheck(true);
+      }
+    };
+    window.addEventListener("resize", widthCheck);
+    return () => {
+      window.removeEventListener("resize", widthCheck);
+    };
+  }, []);
+
   return (
     <Layout>
       <div className="VideoList">
@@ -58,10 +78,10 @@ const GreetingsHome = () => {
         <HeaderVideoBar />
 
         {/* Handling the top videos*/}
-        <TopVideoHeader />
+        <TopVideoHeader widthCheck={widthCheck} />
 
         {/* Handling the category card */}
-        {<CategoryCardMain />}
+        {<CategoryCardMain widthCheck={widthCheck} />}
 
         {/* Handling the insights data of Greetings and Gyan */}
         {<InsightComp />}

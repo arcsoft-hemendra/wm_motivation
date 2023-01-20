@@ -35,28 +35,14 @@ function App() {
           <Switch>
             <Route exact path="/" component={GreetingsHome} />
             <Route exact path="/search" component={Searchpage} />
-            <Route exact path="/events" component={Categorypage} />
-            <Route exact path="/location" component={Location} />
+            <Route exact path="/categories" component={Categorypage} />
+            {/* <Route exact path="/location" component={Location} /> */}
             <Route exact path="/motivationkahani" component={GreetingsKahani} />
-            <Route exact path="/location/:id" component={LocationCity} />
-            <Route exact path="/events/:id" component={Categorypagesingle} />
+            {/* <Route exact path="/location/:id" component={LocationCity} /> */}
+            <Route exact path="/categories/:id" component={Categorypagesingle} />
             <Route exact path="/insights" component={Insight} />
               <Route exact path="/insights/:id" component={Insight} />
             <Route exact path="/:userId" component={GreetingsDetail} />
-            
-
-          {/*   <Route exact path="/greetings" component={GreetingsListing} />
-            <Route
-              exact
-              path="/greetings/:category"
-              component={GreetingsListing}
-            />
-            <Route
-              exact
-              path="/greetings/:category/:userId"
-              component={GreetingsDetail}
-            />
-           */}
             <Route component={NotFound} />
           </Switch>
         </Router>

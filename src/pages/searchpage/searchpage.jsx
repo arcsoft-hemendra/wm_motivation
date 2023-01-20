@@ -95,9 +95,9 @@ const Searchpage = () => {
       <CloseBtn locationType={"/"} />
       <CommonHeading />
       <div>
-        <div className="categories-main-search">
-          <div className="categories-search">
-            <i className="categories-searchIcon bi bi-search"></i>
+        <div className="search_categories-main-search">
+          <div className="search_categories-search">
+            <i className="search_categories-searchIcon bi bi-search"></i>
             <input
               className="categories-optionsInput"
               placeholder={"Search Video"}
@@ -108,30 +108,29 @@ const Searchpage = () => {
         </div>
 
         {filteredDataVideo && filteredDataVideo.length > 0 ? (
-          <div className="greetingVideoContainer">
+          <div className="search_greetingVideoContainer">
             {filteredDataVideo.map((item, index) => {
               return (
                 <section
                   key={index}
                   id="vid_section"
-                  className={`greetVidSection`}
+                  className={`search_greetVidSection`}
                   onClick={() => handlePush(item, index)}
                 >
                   <img
-                    className="videoLandscapeThumb"
+                    className="search_videoLandscapeThumb"
                     src={item?.video_landscape_thumb}
                     alt="thumb"
                   />
-                  <div className="playIconContainer">
-                    <i className={`icon icon-play playIcon`} />
+                  <div className="search_playIconContainer">
+                    <i className={`icon icon-play search_playIcon`} />
                   </div>
-                  <p className="text-white m-0 px-5">{item.storyHeading}</p>
                 </section>
               );
             })}
           </div>
         ) : (
-          <div className="no-category">No Video Available.</div>
+          <div className="search_no-category">No Video Available.</div>
         )}
       </div>
     </>

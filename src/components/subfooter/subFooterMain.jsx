@@ -166,32 +166,29 @@ const SubFooterMain = ({ insightpage }) => {
           <div className="newMainMiddle">
             <p className={"HomePageFooter-meriKahani"}>
               <span style={{ color: "#FF9933" }}>#</span>
-              <span style={{ color: "#ffffff" }}>Meri</span>
-              <span style={{ color: "#128807" }}>Kahani</span>
+              <span style={{ color: "#ffffff" }}>आ</span>
+              <span style={{ color: "#128807" }}>शा</span>
               <span className="bottomBorder"></span>
             </p>
-            <img
+            {/* <img
               className="HomePageFooter-karmayogiFestival"
               src="https://cdn.workmob.com/stories_workmob/promotional/karmyogiyo-ka-utsav.png"
               alt="karmayogion ka utsav image"
-            />
+            /> */}
             <p
               className="HomePageFooter-celebrating"
               // ref={celebratingElemRef}
             >
-              CELEBRATING
-              <span
+              प्रेरणादायक सोच एवं विचार।
+              {/* <span
                 className="HomePageFooter-category"
                 // ref={categoryElemRef}
               >
-                {category}
-              </span>
+               खुशियाँ फैलाएं।  अपनी पहचान बनाएं।
+              </span> */}
             </p>
             <p className="HomePageFooter-titleBox">
-              An initiative to empower professionals, creators, small business
-              owners, entrepreneurs and social workers to share their life
-              stories. Join this campaign to give hope, to inspire and to help
-              change lives.
+            आओ हम सब मिलकर अपने प्रेरक विचारों से देशवासियों के जीवन में उम्मीद का एक नया दीया जलाएं। आप भी अपने प्रेरणादायक वीडियो संदेश के माध्यम से देशवासियों को जीवन में आगे बढ़ने के लिए प्रेरित एवं प्रोत्साहित करें एवं अपने व्यक्तिगत ब्रांड को आगे बढ़ाएं।
             </p>
             <p className="HomePageFooter-banaoApniPehchan">
               <span style={{ color: "#F96332" }}>बनाओ </span>

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import ScrollContainer from "react-indiana-drag-scroll";
 
-const CategoryCardMain = () => {
+const CategoryCardMain = ({ widthCheck }) => {
   const [categoryList, setCategoryList] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     fetch(
@@ -14,37 +16,52 @@ const CategoryCardMain = () => {
     );
   }, []);
 
+  const handleCategory = () => {
+    history.push("/categories");
+  };
+
   return (
     <>
-      {categoryList && categoryList.length > 0 ? (
+      {!widthCheck && categoryList && categoryList.length > 0 ? (
         <>
-          <h1 className="greeting-header-cat">CATEGORY</h1>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <h1 className="greeting-header-cat">CATEGORY</h1>
+            <i
+              onClick={handleCategory}
+              style={{ fontSize: "0.8rem", cursor: "pointer" }}
+              className="icon icon-right-arrow greeting-header-cat"
+            />
+          </div>
           <div className="noScrollbar categories-gridContainer">
             <div
               className={`categories-topRow categories-categoryTopRow ${
                 categoryList.length < 4 ? " filteredDataItem" : " "
               }`}
             >
-              {categoryList.length > 0
-                ? [...categoryList]
-                    .reverse()
-                    .slice(0, 6)
-                    .map((categories, index) => {
-                      return (
-                        <Link
-                          className="categories-locationLink"
-                          key={index}
-                          to={`/events/${categories.category}`}
-                        >
-                          <img
-                            className="categories-optionsImage"
-                            src={`https://cdn.workmob.com/stories_workmob/images/category-bg/${categories.category.toLowerCase()}.png`}
-                            alt={`${categories.category} imageIcon`}
-                          />
-                        </Link>
-                      );
-                    })
-                : null}
+              {[...categoryList]
+                .reverse()
+                .slice(0, 6)
+                .map((categories, index) => {
+                  return (
+                    <Link
+                      className="categories-locationLink"
+                      key={index}
+                      to={`/categories/${categories.category.toLowerCase()}`}
+                    >
+                      <img
+                        className="categories-optionsImage"
+                        src={`https://cdn.workmob.com/stories_workmob/images/category-bg/${categories.category.toLowerCase()}.png`}
+                        alt={`${categories.category.toLowerCase()} imageIcon`}
+                      />
+                    </Link>
+                  );
+                })}
             </div>
           </div>
 
@@ -58,12 +75,12 @@ const CategoryCardMain = () => {
                       <Link
                         className="categories-locationLink"
                         key={index}
-                        to={`/events/${categories.category}`}
+                        to={`/categories/${categories.category.toLowerCase()}`}
                       >
                         <img
                           className="categories-optionsImage"
-                          src={`https://cdn.workmob.com/stories_workmob/images/greetings_category/${categories.category}.png`}
-                          alt={`${categories.category} imageIcon`}
+                          src={`https://cdn.workmob.com/stories_workmob/images/category-bg/${categories.category.toLowerCase()}.png`}
+                          alt={`${categories.category.toLowerCase()} imageIcon`}
                         />
                       </Link>
                     );
@@ -71,7 +88,46 @@ const CategoryCardMain = () => {
               : null}
           </div>
         </>
-      ) : null}
+      ) : (
+        <>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <h1 className="greeting-header-cat">CATEGORY</h1>
+            <i
+              onClick={handleCategory}
+              style={{ fontSize: "0.8rem" }}
+              className="icon icon-right-arrow greeting-header-cat"
+            />
+          </div>
+          <ScrollContainer>
+            <div style={{ display: "flex", margin: "0rem 1rem" }}>
+              {[...categoryList]
+                .reverse()
+                .slice(0, 4)
+                .map((categories, index) => {
+                  return (
+                    <Link
+                      className=""
+                      key={index}
+                      to={`/categories/${categories.category.toLowerCase()}`}
+                    >
+                      <img
+                        className="m-2"
+                        src={`https://cdn.workmob.com/stories_workmob/images/category-bg/${categories.category.toLowerCase()}.png`}
+                        alt={`${categories.category.toLowerCase()} imageIcon`}
+                      />
+                    </Link>
+                  );
+                })}
+            </div>
+          </ScrollContainer>
+        </>
+      )}
     </>
   );
 };
