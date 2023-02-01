@@ -8,32 +8,36 @@ const SuggestedVideo = ({ categoryName }) => {
   const [loader, setLoader] = useState(true);
   const { pathname } = useLocation();
   const history = useHistory();
-  const URL = `https://cdn.workmob.com/stories_workmob/config/namaste-category-index/${categoryName}.json`;
+  // const URL = `https://cdn.workmob.com/stories_workmob/config/namaste-category-index/${categoryName}.json`;
 
   useEffect(() => {
     setLoader(true);
-    fetch(URL)
-      .then((data) => data.json())
-      .then((res) => {
-        const mainData = res.filter((item) => item.video_landscape_thumb != "");
-        if (mainData.length < 4) {
-          fetch(
-            `https://cdn.workmob.com/stories_workmob/config/namaste-stories-top.json`
-          ).then((res) =>
-            res.json().then((result) => {
-              const newMainData = result.filter(
-                (item) => item.video_landscape_thumb !== ""
-              );
-              const newSlicedData = newMainData.slice(0, 4 - mainData.length);
-              const arrayData = mainData.concat(newSlicedData);
-              setSuggestedData(arrayData);
-            })
-          );
-        } else {
-          const newSlicedData = mainData.slice(0, 12);
-          setSuggestedData(newSlicedData);
-        }
-      });
+    // fetch(URL)
+    //   .then((data) => data.json())
+    //   .then((res) => {
+    //     const mainData = res.filter((item) => item.video_landscape_thumb != "");
+    //     if (mainData.length < 4) {
+    fetch(
+      `https://cdn.workmob.com/stories_workmob/config/hope-stories-top.json`
+    ).then((res) =>
+      res.json().then((result) => {
+        const newMainData = result.filter(
+          (item) => item.video_landscape_thumb !== ""
+        );
+        // const newSlicedData = newMainData.slice(0, 4 - mainData.length);
+        const newSlicedData = newMainData.slice(0,12);
+        setSuggestedData(newSlicedData);
+
+        // const arrayData = mainData.concat(newSlicedData);
+        // setSuggestedData(arrayData);
+      })
+    );
+
+    //    else {
+    //     const newSlicedData = mainData.slice(0, 12);
+    //     setSuggestedData(newSlicedData);
+    //   }
+    // });
     setLoader(false);
     return () => {
       setSuggestedData([]);
@@ -68,7 +72,7 @@ const SuggestedVideo = ({ categoryName }) => {
                 </div>
               </section>
 
-              <p className="text-white">{item.storyHeading}</p>
+              {/* <p className="text-white">{item.storyHeading}</p> */}
             </div>
           ))
         : null}

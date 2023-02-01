@@ -338,13 +338,13 @@ const UploadBox = () => {
           </div>
         </form>
       </div>
-      <p className="text-white text-center mt-2">
+      {/* <p className="text-white text-center mt-2">
         {" "}
         <a className="text-white" target="_blank" href="https://stories.workmob.com/create">
           See
         </a>{" "}
         how to create your video{" "}
-      </p>
+      </p> */}
     </div>
   );
 };

@@ -81,7 +81,7 @@ const GreetingsHome = () => {
         <TopVideoHeader widthCheck={widthCheck} />
 
         {/* Handling the category card */}
-        {<CategoryCardMain widthCheck={widthCheck} />}
+        {/* {<CategoryCardMain widthCheck={widthCheck} />} */}
 
         {/* Handling the insights data of Greetings and Gyan */}
         {<InsightComp />}
