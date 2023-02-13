@@ -66,7 +66,7 @@ const Searchpage = () => {
         return cate;
       } else {
         return (
-          cate.name.toLowerCase().includes(searchVideo) ||
+          cate.name.toLowerCase().includes(searchVideo.toLowerCase()) ||
           cate.storyType
             .toLowerCase()
             .replace(/ /g, "-")
