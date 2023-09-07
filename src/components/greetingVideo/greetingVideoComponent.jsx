@@ -101,6 +101,14 @@ const GreetingVideoComponent = (props) => {
         <h3 className="greeting-heading-header">
           {userData && userData.storyHeading}
         </h3>
+
+        {
+          userData.fullStory &&
+          <p className="greeting-subheading">
+            {userData?.fullStory}
+          </p>
+        }
+ 
         {!!storySlug && (
           <a
             className="GreetingVideoComponent-fullStoryLink"

@@ -24,6 +24,21 @@
   font-weight: 100;
 }
 
+
+.greeting-subheading{
+  color: white;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 30px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.03rem;
+  width: 60%;
+  margin: 0 auto 15px auto;
+  padding-top: 20px;
+  opacity: 0.8;
+}
+
+
 .greetingLogo {
   width: 100%;
   display: flex;
@@ -168,6 +183,9 @@ span.vjs-control-text {
   .fHeading {
     padding: 40px 0 10px 0;
     margin: 0 0 0 0;
+  }
+  .greeting-subheading{
+    width: 100%;
   }
 
   .fHeading h1 {
