@@ -24,7 +24,6 @@
   font-weight: 100;
 }
 
-
 .greeting-subheading{
   color: white;
   font-size: 20px;
@@ -34,10 +33,9 @@
   letter-spacing: 0.03rem;
   width: 60%;
   margin: 0 auto 15px auto;
-  padding-top: 20px;
+  /* padding-top: 20px; */
   opacity: 0.8;
 }
-
 
 .greetingLogo {
   width: 100%;
@@ -46,7 +44,7 @@
   justify-content: center;
   margin-bottom: 6px;
   align-items: center;
-}
+} 
 
 .greetingLogo img {
   width: 150px;
@@ -86,7 +84,7 @@
   font-size: 40px;
   margin: 0;
   font-family: "hp-simplified", sans-serif;
-}
+} 
 
 .fContent {
   margin: 10px auto;
@@ -94,20 +92,6 @@
 
 .fContent img {
   width: 300px;
-}
-
-.videoContainer {
-  position: relative;
-  width: 60%;
-  height: 100%;
-  margin: 0 auto;
-  max-width: 100%;
-}
-
-.videoContainer > div {
-  padding: 0 !important;
-  width: 100% !important;
-  height: auto !important;
 }
 
 .videoContainer video {
@@ -121,6 +105,40 @@
     bottom right, bottom center, bottom left, center left;
   background-repeat: no-repeat;
   padding: 4px;
+}
+
+.videoContainer .profile_video-dimensions{
+  height: auto !important;
+}
+.video-js{
+  width: 100%;
+}
+
+.videoContainer {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 100%;
+  padding-bottom: 10px;
+}
+
+.videoContainer > div  {
+  padding: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+.video-js .vjs-tech{
+  position: unset !important;
+}
+
+.video-js{
+  background-color: transparent !important;
+}
+.video-js .vjs-control-bar{
+  bottom: 5px !important;
+  background-color: transparent !important;
 }
 
 .videoContainer .buttonContainer {
@@ -170,7 +188,7 @@
   text-align: right;
 }
 .heading {
-  color: white;
+  color: white; 
   font-weight: 100;
   font-family: "Montserrat", sans-serif;
 }
@@ -179,13 +197,25 @@ span.vjs-control-text {
   display: none;
 }
 
+.video-js .vjs-big-play-button{
+  /* margin-left: -1.05em !important;
+  width: 1.7em !important;
+  border: none !important;
+  border-radius: 3rem !important;
+  background-color: rgba(0, 0, 0, 0.5); */
+
+  display: none !important;
+}
+
+.videoContainer .video-js .vjs-big-play-button{
+  top: 50% !important;
+  left: 50% !important;
+}
+
 @media (max-width: 768px) {
   .fHeading {
     padding: 40px 0 10px 0;
     margin: 0 0 0 0;
-  }
-  .greeting-subheading{
-    width: 100%;
   }
 
   .fHeading h1 {
@@ -213,6 +243,10 @@ span.vjs-control-text {
   .greetingLogo {
     padding: 12px;
     margin-bottom: 0;
+  }
+
+  .greeting-subheading{
+    width: 100%;
   }
 
   .videoContainer .unmuteBtn {
@@ -246,6 +280,8 @@ span.vjs-control-text {
     padding: 0 5px 0 10px;
     box-sizing: border-box;
   }
+
+  
 }
 
 @keyframes skeleton-loading {

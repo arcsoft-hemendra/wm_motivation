@@ -2,6 +2,7 @@ import "./greetingVideo.css";
 import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import videojs from "video.js";
+import 'video.js/dist/video-js.css';
 import CloseBtn from "../common/CloseBtn/CloseBtn";
 import VolumnBtn from "../common/VolumnBtn/VolumnBtn";
 import { logo } from "../../constants/requiredAssets";
@@ -80,7 +81,8 @@ const GreetingVideoComponent = (props) => {
           <img src={logo} alt="workmob" />
         </div>
         <div className={"videoContainer"}>
-          <video
+          <video-js
+          className="video-js vjs-default-skin vjs-big-play-centered"
             ref={videoRef}
             controls={false}
             playsInline
@@ -95,7 +97,7 @@ const GreetingVideoComponent = (props) => {
               type="application/x-mpegURL"
               src={userData.video_url_landscape}
             />
-          </video>
+          </video-js>
           <VolumnBtn handleClick={toggleMute} isMuted={isMuted} />
         </div>
         <h3 className="greeting-heading-header">
