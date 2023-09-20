@@ -10,6 +10,7 @@ const GreetingDetail = (props) => {
   const { userId } = props.match.params;
   const [userData, setUserData] = useState(null);
   const [storySlug, setStorySlug] = useState("");
+  const [suggestedVideoData, setSuggestedVideoData] = useState([])
   const [isLoading, setIsLoading] = useState(true);
   let videoObjUrl = `https://cdn.workmob.com/stories_workmob/config/hope-story-detail/${userId}.json`;
   let documentTitle = userData?.metaTitle || "";
@@ -42,6 +43,7 @@ const GreetingDetail = (props) => {
         setIsLoading(false);
         if (slug) {
           setStorySlug(slug);
+          setSuggestedVideoData(userJson?.hope)
         } else {
           return;
         }
@@ -63,7 +65,7 @@ const GreetingDetail = (props) => {
         </Helmet>
       </HelmetProvider>
       {userData ? (
-        <GreetingVideoComponent userData={userData} storySlug={storySlug} />
+        <GreetingVideoComponent userData={userData} storySlug={storySlug} suggestedVideoData={suggestedVideoData} />
       ) : (
         <NotFound title="not found" />
       )}

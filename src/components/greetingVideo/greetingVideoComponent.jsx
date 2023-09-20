@@ -9,7 +9,7 @@ import { logo } from "../../constants/requiredAssets";
 import SuggestedVideo from "../suggestedvideo/suggestedVideo";
 
 const GreetingVideoComponent = (props) => {
-  const { userData, storySlug } = props;
+  const { userData, storySlug, suggestedVideoData } = props;
   const [isMuted, toggleMute] = useState(true);
   const videoRef = useRef(null);
   const playerRef = useRef(null);
@@ -98,7 +98,7 @@ const GreetingVideoComponent = (props) => {
               src={userData.video_url_landscape}
             />
           </video-js>
-          <VolumnBtn handleClick={toggleMute} isMuted={isMuted} />
+          {/* <VolumnBtn handleClick={toggleMute} isMuted={isMuted} /> */}
         </div>
         <h3 className="greeting-heading-header">
           {userData && userData.storyHeading}
@@ -120,7 +120,7 @@ const GreetingVideoComponent = (props) => {
             View my page
           </a>
         )}
-        <SuggestedVideo categoryName={categoryName} />
+        <SuggestedVideo categoryName={categoryName} suggestedVideoData={suggestedVideoData} />
       </section>
     </div>
   );

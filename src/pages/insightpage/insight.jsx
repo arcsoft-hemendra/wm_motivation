@@ -17,7 +17,7 @@ const Insight = () => {
 
   useEffect(() => {
     setLoader(true);
-    fetch("https://cdn.workmob.com/stories_workmob/config/insightlisting.json")
+    fetch("https://cdn.workmob.com/stories_workmob/config/motivation-insightlisting.json")
       .then((res) => res.json())
       .then((res) => {
         const result = res.find(

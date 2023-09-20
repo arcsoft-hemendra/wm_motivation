@@ -3,50 +3,53 @@ import { useHistory, useLocation } from "react-router-dom";
 import LoaderComponent from "../common/Loader/Loader";
 import styles from "./suggestedVideo.module.css";
 
-const SuggestedVideo = ({ categoryName }) => {
-  const [suggestedData, setSuggestedData] = useState([]);
-  const [loader, setLoader] = useState(true);
+const SuggestedVideo = ({ categoryName, suggestedVideoData }) => {
+  // const [suggestedData, setSuggestedData] = useState([]);
+  // const [loader, setLoader] = useState(true);
   const { pathname } = useLocation();
   const history = useHistory();
   // const URL = `https://cdn.workmob.com/stories_workmob/config/namaste-category-index/${categoryName}.json`;
 
-  useEffect(() => {
-    setLoader(true);
+  // useEffect(() => {
+  //   setLoader(true);
     // fetch(URL)
     //   .then((data) => data.json())
     //   .then((res) => {
     //     const mainData = res.filter((item) => item.video_landscape_thumb != "");
     //     if (mainData.length < 4) {
-    fetch(
-      `https://cdn.workmob.com/stories_workmob/config/hope-stories-top.json`
-    ).then((res) =>
-      res.json().then((result) => {
-        const newMainData = result.filter(
-          (item) => item.video_landscape_thumb !== ""
-        );
+    // fetch(
+    //   `https://cdn.workmob.com/stories_workmob/config/hope-stories-top.json`
+    // ).then((res) =>
+    //   res.json().then((result) => {
+    //     const newMainData = result.filter(
+    //       (item) => item.video_landscape_thumb !== ""
+    //     );
         // const newSlicedData = newMainData.slice(0, 4 - mainData.length);
-        const newSlicedData = newMainData.slice(0,12);
-        setSuggestedData(newSlicedData);
+        // const newSlicedData = newMainData.slice(0,12);
+        // setSuggestedData(newSlicedData);
 
         // const arrayData = mainData.concat(newSlicedData);
         // setSuggestedData(arrayData);
-      })
-    );
+    //   })
+    // );
 
     //    else {
     //     const newSlicedData = mainData.slice(0, 12);
     //     setSuggestedData(newSlicedData);
     //   }
     // });
-    setLoader(false);
-    return () => {
-      setSuggestedData([]);
-    };
-  }, [pathname]);
+  //   setLoader(false);
+  //   return () => {
+  //     setSuggestedData([]);
+  //   };
+  // }, [pathname]);
 
-  if (loader) {
-    return <LoaderComponent />;
-  }
+  // if (loader) {
+  //   return <LoaderComponent />;
+  // }
+
+  
+  const filterData = suggestedVideoData.filter((item)=>item.slug !== pathname?.split('/')[1])
 
   const onVideoClick = (item) => {
     history.push(`/${item.slug}`);
@@ -54,8 +57,8 @@ const SuggestedVideo = ({ categoryName }) => {
 
   return (
     <div className={styles.greetingVideoContainer}>
-      {suggestedData && suggestedData.length > 0
-        ? suggestedData.map((item, index) => (
+      {filterData && filterData.length > 0
+        ? filterData.map((item, index) => (
             <div key={index}>
               <section
                 id="vid_section"

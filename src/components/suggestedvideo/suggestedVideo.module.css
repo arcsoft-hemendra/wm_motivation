@@ -49,7 +49,7 @@
 @media (max-width: 767px) {
   .greetingVideoContainer {
     margin: 2.5em 0em 0em;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1em;
   }
 
