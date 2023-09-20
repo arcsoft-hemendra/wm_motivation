@@ -57,9 +57,10 @@ const SuggestedVideo = ({ categoryName, suggestedVideoData }) => {
 
   return (
     <div className={styles.greetingVideoContainer}>
-      {filterData && filterData.length > 0
+     
+      {filterData && filterData?.length > 1
         ? filterData.map((item, index) => (
-            <div key={index}>
+            <div key={index}> 
               <section
                 id="vid_section"
                 onClick={() => onVideoClick(item)}
@@ -75,7 +76,7 @@ const SuggestedVideo = ({ categoryName, suggestedVideoData }) => {
                 </div>
               </section>
 
-              {/* <p className="text-white">{item.storyHeading}</p> */}
+              <p className="text-white">{item.storyHeading}</p>
             </div>
           ))
         : null}

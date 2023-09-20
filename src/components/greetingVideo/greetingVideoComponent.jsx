@@ -82,7 +82,7 @@ const GreetingVideoComponent = (props) => {
         </div>
         <div className={"videoContainer"}>
           <video-js
-          className="video-js vjs-default-skin vjs-big-play-centered"
+            className="video-js vjs-default-skin vjs-big-play-centered"
             ref={videoRef}
             controls={false}
             playsInline
@@ -103,14 +103,15 @@ const GreetingVideoComponent = (props) => {
         <h3 className="greeting-heading-header">
           {userData && userData.storyHeading}
         </h3>
-
         {
-          userData.fullStory &&
-          <p className="greeting-subheading">
-            {userData?.fullStory}
-          </p>
+          userData?.fullStory &&
+          <div
+            className="greeting-subheading"
+            dangerouslySetInnerHTML={{ __html: userData?.fullStory }}
+          />
+
         }
- 
+
         {!!storySlug && (
           <a
             className="GreetingVideoComponent-fullStoryLink"
