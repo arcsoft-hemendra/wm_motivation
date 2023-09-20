@@ -46,7 +46,7 @@ const HeaderVideoBar = () => {
           <Header heading={"आशा"} />
           <div
             className="paddingClassVideo"
-            style={{ paddingTop: "41.87%" }}
+            style={{ paddingTop: "41.7%" }}
           ></div>
           <VideoJS
             options={{
