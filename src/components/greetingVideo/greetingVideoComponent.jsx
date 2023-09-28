@@ -7,6 +7,9 @@ import CloseBtn from "../common/CloseBtn/CloseBtn";
 import VolumnBtn from "../common/VolumnBtn/VolumnBtn";
 import { logo } from "../../constants/requiredAssets";
 import SuggestedVideo from "../suggestedvideo/suggestedVideo";
+import greetingsData from "../../pages/greetings/greetingsData.json";
+import "../commonHeading/commonHeading.css";
+import SkeletonVideoThumbnail from "../common/skeleton/videoThumbnail";
 
 const GreetingVideoComponent = (props) => {
   const { userData, storySlug, suggestedVideoData } = props;
@@ -73,12 +76,23 @@ const GreetingVideoComponent = (props) => {
     }
   }
 
+  const { greetingsJson } = greetingsData;
+  const heading = greetingsJson.heading;
+  const tagline = greetingsJson.tagline;
+  const paragraph = greetingsJson.paragraph;
+
+
   return (
     <div>
       <CloseBtn locationType={"/"} />
       <section className={`${"verticalScrolling"}`}>
-        <div className={"greetingLogo"}>
+        {/* <div className={"greetingLogo"}>
           <img src={logo} alt="workmob" />
+        </div> */}
+
+        <div className="greet-div">
+          <h1 className={"VideoList-title"}>{heading}</h1>
+          <h3 className="VideoList-tagline common-line">{tagline}</h3>
         </div>
         <div className={"videoContainer"}>
           <video-js
@@ -103,6 +117,7 @@ const GreetingVideoComponent = (props) => {
         <h3 className="greeting-heading-header">
           {userData && userData.storyHeading}
         </h3>
+        
         {
           userData?.fullStory &&
           <div
@@ -115,9 +130,7 @@ const GreetingVideoComponent = (props) => {
         {!!storySlug && (
           <a
             className="GreetingVideoComponent-fullStoryLink"
-            target="_blank"
-            href={`https://stories.workmob.com/${storySlug}`}
-          >
+            target="_blank" href={`https://stories.workmob.com/${storySlug}`} >
             View my page
           </a>
         )}

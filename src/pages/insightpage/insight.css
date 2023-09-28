@@ -51,6 +51,10 @@
   display: flex;
 }
 
+.greet-div .common-line::after{
+  top: 110%;
+}
+
 .Footer-madeWithLove {
   font: 100 13px/2 "Segoe UI", sans-serif;
   width: 118px;
@@ -483,7 +487,7 @@
 }
 
 .greetVidSection {
-  border-radius: 12px;
+  /* border-radius: 12px; */
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
   position: relative;

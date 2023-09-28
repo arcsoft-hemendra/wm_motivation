@@ -7,6 +7,8 @@ import Socialshare from "../../components/socialshare/socialshare";
 import SubFooterMain from "../../components/subfooter/subFooterMain";
 import "./insight.css";
 import "./../../../node_modules/bootstrap/dist/css/bootstrap.css";
+import greetingsData from "../../pages/greetings/greetingsData.json";
+import "../../components/commonHeading/commonHeading.css";
 
 const Insight = () => {
   const [insightData, setInsightData] = useState({});
@@ -14,6 +16,12 @@ const Insight = () => {
   const [loader, setLoader] = useState(true);
   const { pathname } = useLocation();
   const params = useParams();
+
+  
+  const { greetingsJson } = greetingsData;
+  const heading = greetingsJson.heading;
+  const tagline = greetingsJson.tagline;
+  const paragraph = greetingsJson.paragraph;
 
   useEffect(() => {
     setLoader(true);
@@ -38,9 +46,13 @@ const Insight = () => {
   if (params?.id) {
     return (
       <>
-        <Header heading={"आशा"} type="insights" />
+        {/* <Header heading={"आशा"} type="insights" /> */}
+        <div className="greet-div">
+          <h1 className={"VideoList-title"}>{heading}</h1>
+          <h3 className="VideoList-tagline common-line">{tagline}</h3>
+        </div>
         <CloseBtn locationType={"/"} />
-        <div className="container mt-5 mt-md-0">
+        <div className="container mt-2 mt-md-0">
           {/* Heading and Image */}
           <div className="bg-transparent p-0 position-relative pt-3 pt-md-5 mb-4">
             <h1 className="text-white font-weight-bold mb-4 font-50 charter-regular heading">
@@ -78,9 +90,13 @@ const Insight = () => {
   } else {
     return (
       <>
-        <Header heading={"आशा"} type="insights" />
+        {/* <Header heading={"आशा"} type="insights" /> */}
+        <div className="greet-div">
+          <h1 className={"VideoList-title"}>{heading}</h1>
+          <h3 className="VideoList-tagline common-line">{tagline}</h3>
+        </div>
         <CloseBtn locationType={"/"} />
-        <div className="greeting-randomvideo-set mt-5">
+        <div className="greeting-randomvideo-set mt-2">
           <h1
             className="greeting-header-cat"
             style={{
