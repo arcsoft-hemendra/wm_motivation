@@ -34,6 +34,22 @@
   margin: 0 auto 0.48em;
 }
 
+.greet-div{
+  position: relative;
+}
+
+.common-line::after{
+  content: "";
+  width: 29px;
+  height: 4px;
+  background: #f96332;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 95%;
+  margin: 0 auto 0.48em;
+}
+
 @media (max-width: 767px) {
   .VideoList-title {
     font-size: 2.2rem;
